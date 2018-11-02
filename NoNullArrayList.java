@@ -36,5 +36,5 @@ public class NoNullArrayList<T> extends ArrayList <T>{
     }
     return true;
   }
-  
+
 }
