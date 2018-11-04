@@ -9,12 +9,25 @@ public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T
     super (startingCapacity);
   }
 
-  public void add (int index, T value) {
-    super.add (index, value);
+  public boolean add (T value)  {
+    if (value == null) {
+      throw new IllegalArgumentException ("Can't add a null");
+    }
+    int ans = 0;
+    for (int x = 0; x < size (); x ++) {
+      if (bigger (value, get (x))) {
+        ans = x + 1;
+      }
+    }
+    super.add (ans, value);
+    return true;
   }
 
-  public boolean add (T value)  {
-    super.add (value);
+  public void add (int index, T value) {
+    if (index < 0 || index > size ()) {
+      throw new IndexOutOfBoundsException ("Check index");
+    }
+    add (value);
   }
 
   private boolean bigger (T val1, T val2) {
