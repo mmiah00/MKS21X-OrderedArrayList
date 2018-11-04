@@ -76,6 +76,7 @@ public class ArrayListDriver {
       ints.set(i, k);
       System.out.println(ints);
     }
+
     System.out.print("Ints (should print [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]): ");
     System.out.println(ints);
     System.out.println("----------");
